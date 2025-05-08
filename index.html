@@ -14,7 +14,7 @@
 
     body {
       font-family: 'Poppins', sans-serif;
-      background-color: #e0f7fa; /* Light Aqua */
+      background-color: #e0f7fa;
       color: #2e3c3f;
       line-height: 1.8;
       display: flex;
@@ -23,25 +23,28 @@
     }
 
     header {
-      background: linear-gradient(135deg, #a5d6a7, #81d4fa); /* Green to Light Blue */
-      padding: 30px;
+      background: linear-gradient(135deg, #a5d6a7, #81d4fa);
+      padding: 30px 20px;
       text-align: center;
       animation: fadeIn 1s ease-in-out;
     }
 
-    header h1 {
-      color: #004d40;
-      font-size: 2.8em;
+    .logo-container img {
+      max-width: 250px;
+      height: auto;
+      margin: 0 auto 15px;
+      display: block;
     }
 
     nav ul {
       list-style: none;
-      margin-top: 15px;
+      padding: 0;
+      margin-top: 10px;
     }
 
     nav ul li {
-      display: inline;
-      margin: 0 20px;
+      display: inline-block;
+      margin: 0 15px;
     }
 
     nav a {
@@ -72,6 +75,7 @@
       border-radius: 15px;
       text-align: center;
       box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      margin-top: 20px;
     }
 
     h2, h3, h4 {
@@ -135,7 +139,9 @@
 <body>
 
 <header>
-  <h1>Nail Nova</h1>
+  <div class="logo-container">
+    <img src="https://raw.githubusercontent.com/cosmicVT/Nail-Nova/main/logo.jpg" alt="Nail Nova Logo" />
+  </div>
   <nav>
     <ul>
       <li><a href="#home" onclick="showSection('home')">Home</a></li>
@@ -169,8 +175,7 @@
   <div class="gallery-images">
     <img src="https://raw.githubusercontent.com/cosmicVT/Nail-Nova/main/nail.jpg" alt="Nail Design 1" class="bounce">
     <img src="https://raw.githubusercontent.com/cosmicVT/Nail-Nova/main/nail1.jpg" alt="Nail Design 2" class="bounce">
-    <img src="https://raw.githubusercontent.com/cosmicVT/Nail-Nova/main/nail2.jpg" alt="Nail Design 2" class="bounce">
-
+    <img src="https://raw.githubusercontent.com/cosmicVT/Nail-Nova/main/nail2.jpg" alt="Nail Design 3" class="bounce">
   </div>
 </section>
 
