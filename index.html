@@ -120,7 +120,6 @@
       font-size: 0.95em;
     }
 
-    /* Animations */
     @keyframes fadeIn {
       from { opacity: 0; transform: translateY(20px); }
       to { opacity: 1; transform: translateY(0); }
@@ -156,9 +155,15 @@
     }
 
     .service-details {
-      display: none;
-      margin-top: 10px;
-      color: #455a64;
+      overflow: hidden;
+      max-height: 0;
+      opacity: 0;
+      transition: max-height 0.4s ease, opacity 0.4s ease;
+    }
+
+    .service-box.open .service-details {
+      max-height: 200px;
+      opacity: 1;
     }
   </style>
 </head>
@@ -166,7 +171,7 @@
 
 <header>
   <div class="logo-container">
-    <img src="https://raw.githubusercontent.com/cosmicVT/Nail-Nova/main/logo.jpg" alt="Nail Nova Logo" />
+    <img src="https://raw.githubusercontent.com/cosmicVT/Nail-Nova/main/logo.jpg" alt="Nail Nova Logo" loading="lazy" />
   </div>
   <nav>
     <ul>
@@ -217,14 +222,14 @@
 <section id="gallery" style="display:none;">
   <h2>Gallery</h2>
   <div class="gallery-images">
-    <img src="https://raw.githubusercontent.com/cosmicVT/Nail-Nova/main/nail.jpg" alt="Nail Design 1" class="bounce">
-    <img src="https://raw.githubusercontent.com/cosmicVT/Nail-Nova/main/nail1.jpg" alt="Nail Design 2" class="bounce">
-    <img src="https://raw.githubusercontent.com/cosmicVT/Nail-Nova/main/nail2.jpg" alt="Nail Design 3" class="bounce">
+    <img src="https://raw.githubusercontent.com/cosmicVT/Nail-Nova/main/nail.jpg" alt="Nail Design 1" class="bounce" loading="lazy">
+    <img src="https://raw.githubusercontent.com/cosmicVT/Nail-Nova/main/nail1.jpg" alt="Nail Design 2" class="bounce" loading="lazy">
+    <img src="https://raw.githubusercontent.com/cosmicVT/Nail-Nova/main/nail2.jpg" alt="Nail Design 3" class="bounce" loading="lazy">
   </div>
 </section>
 
 <section id="contact" style="display:none;">
-  <h2>Contact Me</h2>
+  <h2>Contact Us</h2>
   <div class="contact-info">
     <h3>Get in Touch</h3>
     <p><strong>Email:</strong> contact@nailnova.com</p>
@@ -242,17 +247,19 @@
     document.querySelectorAll('section').forEach(section => {
       section.style.display = 'none';
     });
-    document.getElementById(sectionId).style.display = 'block';
+    const sectionToShow = document.getElementById(sectionId);
+    if (sectionToShow) {
+      sectionToShow.style.display = 'block';
+    }
   }
 
   function toggleService(element) {
-    const details = element.querySelector('.service-details');
-    const isVisible = details.style.display === 'block';
-    details.style.display = isVisible ? 'none' : 'block';
+    element.classList.toggle('open');
   }
 
-  // Default section on load
-  showSection('home');
+  window.addEventListener('DOMContentLoaded', () => {
+    showSection('home');
+  });
 </script>
 
 </body>
