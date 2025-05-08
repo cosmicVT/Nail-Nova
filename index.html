@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nail Nova</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #e0f7fa; /* Light Aqua */
+      color: #2e3c3f;
+      line-height: 1.8;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    header {
+      background: linear-gradient(135deg, #a5d6a7, #81d4fa); /* Green to Light Blue */
+      padding: 30px;
+      text-align: center;
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    header h1 {
+      color: #004d40;
+      font-size: 2.8em;
+    }
+
+    nav ul {
+      list-style: none;
+      margin-top: 15px;
+    }
+
+    nav ul li {
+      display: inline;
+      margin: 0 20px;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #004d40;
+      font-weight: 600;
+      font-size: 1.1em;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #2e7d32;
+    }
+
+    section {
+      padding: 30px;
+      margin: 20px;
+      border: 1px solid #81d4fa;
+      border-radius: 15px;
+      background: #e8f5e9;
+      flex: 1;
+      animation: fadeIn 0.8s ease;
+    }
+
+    .bio {
+      background-color: #c8e6c9;
+      padding: 20px;
+      border-radius: 15px;
+      text-align: center;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    h2, h3, h4 {
+      color: #2e7d32;
+    }
+
+    .contact-info {
+      text-align: center;
+    }
+
+    .contact-info h3 {
+      margin-bottom: 15px;
+    }
+
+    .contact-info p {
+      margin: 8px 0;
+      font-size: 1.1em;
+    }
+
+    #gallery {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    #gallery img {
+      width: 28%;
+      border-radius: 10px;
+      margin: 15px;
+      transition: transform 0.3s;
+      animation: fadeIn 1s ease;
+    }
+
+    #gallery img:hover {
+      transform: scale(1.07);
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #b2dfdb;
+      font-size: 0.95em;
+    }
+
+    /* Animations */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .bounce:hover {
+      animation: bounce 0.5s;
+    }
+
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-8px); }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Nail Nova</h1>
+  <nav>
+    <ul>
+      <li><a href="#home" onclick="showSection('home')">Home</a></li>
+      <li><a href="#services" onclick="showSection('services')">Contact</a></li>
+      <li><a href="#gallery" onclick="showSection('gallery')">Gallery</a></li>
+      <li><a href="#contact" onclick="showSection('contact')">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+<section id="home">
+  <h2>Welcome to Nail Nova</h2>
+  <p>At Nail Nova, we provide top-tier nail services in a peaceful, elegant environment.</p>
+  <div class="bio">
+    <h3>About Us</h3>
+    <p>Our passionate team is here to make your nails shine with confidence and care. We believe in pampering with precision and style.</p>
+  </div>
+</section>
+
+<section id="services" style="display:none;">
+  <h2>Let's Connect</h2>
+  <div class="contact-info">
+    <p><strong>Email:</strong> your@email.com</p>
+    <p><strong>Instagram:</strong> @yourinsta</p>
+    <p><strong>Phone:</strong> (123) 456-7890</p>
+  </div>
+</section>
+
+<section id="gallery" style="display:none;">
+  <h2>Gallery</h2>
+  <div class="gallery-images">
+    <img src="https://github.com/cosmicVT/Nail-Nova/blob/main/nail.jpg" alt="Nail Design 1" class="bounce">
+    <img src="https://via.placeholder.com/250" alt="Nail Design 2" class="bounce">
+    <img src="https://via.placeholder.com/250" alt="Nail Design 3" class="bounce">
+    <img src="https://via.placeholder.com/250" alt="Nail Design 4" class="bounce">
+    <img src="https://via.placeholder.com/250" alt="Nail Design 5" class="bounce">
+  </div>
+</section>
+
+<section id="contact" style="display:none;">
+  <h2>Contact Us</h2>
+  <div class="contact-info">
+    <h3>Get in Touch</h3>
+    <p><strong>Email:</strong> contact@nailnova.com</p>
+    <p><strong>Instagram:</strong> @nailnova</p>
+    <p><strong>Phone:</strong> (123) 456-7890</p>
+  </div>
+</section>
+
+<footer>
+  <p>&copy; 2025 Nail Nova. All rights reserved.</p>
+</footer>
+
+<script>
+  function showSection(sectionId) {
+    document.querySelectorAll('section').forEach(section => {
+      section.style.display = 'none';
+    });
+    document.getElementById(sectionId).style.display = 'block';
+  }
+
+  showSection('home');
+</script>
+
+</body>
+</html>
