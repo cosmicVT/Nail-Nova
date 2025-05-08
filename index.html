@@ -134,6 +134,32 @@
       0%, 100% { transform: translateY(0); }
       50% { transform: translateY(-8px); }
     }
+
+    /* Services Section */
+    .service-box {
+      background-color: #ffffff;
+      border: 2px solid #81d4fa;
+      border-radius: 12px;
+      padding: 20px;
+      margin: 15px 0;
+      cursor: pointer;
+      transition: box-shadow 0.3s;
+    }
+
+    .service-box:hover {
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    .service-box h3 {
+      margin-bottom: 10px;
+      color: #00796b;
+    }
+
+    .service-details {
+      display: none;
+      margin-top: 10px;
+      color: #455a64;
+    }
   </style>
 </head>
 <body>
@@ -164,6 +190,27 @@
 <section id="services" style="display:none;">
   <h2>Services</h2>
   <div class="services">
+    <div class="service-box" onclick="toggleService(this)">
+      <h3>Gel Manicure</h3>
+      <div class="service-details">
+        <p>A long-lasting gel manicure with premium polish and care.</p>
+        <p><strong>Price:</strong> $40</p>
+      </div>
+    </div>
+    <div class="service-box" onclick="toggleService(this)">
+      <h3>Acrylic Full Set</h3>
+      <div class="service-details">
+        <p>Full acrylic set with custom shaping and polish of your choice.</p>
+        <p><strong>Price:</strong> $60</p>
+      </div>
+    </div>
+    <div class="service-box" onclick="toggleService(this)">
+      <h3>Nail Art Add-on</h3>
+      <div class="service-details">
+        <p>Custom nail art designs, glitter, and decals for added flair.</p>
+        <p><strong>Price:</strong> $10+</p>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -198,6 +245,13 @@
     document.getElementById(sectionId).style.display = 'block';
   }
 
+  function toggleService(element) {
+    const details = element.querySelector('.service-details');
+    const isVisible = details.style.display === 'block';
+    details.style.display = isVisible ? 'none' : 'block';
+  }
+
+  // Default section on load
   showSection('home');
 </script>
 
